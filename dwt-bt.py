@@ -61,9 +61,9 @@ async def run_once() -> None:
         if grabbed:
             try:
                 tp.ungrab()
+                grabbed = False
             except OSError:
                 pass
-            grabbed = False
 
     try:
         async for event in kb.async_read_loop():
